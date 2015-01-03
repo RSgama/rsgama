@@ -1,0 +1,38 @@
+1 - Creio que seja mais interessante para o arquivo rs232.h ter uma estrutura de dados
+	global, porém static e criar uma função "getDados" (por ex.) para obter tal referência.
+	Isto reduzirá o número de parâmetros da função e deixará os detalhes da porta oculto
+	para quem a utiliza.
+	
+	
+
+LEMBRETES:
+	- Quando ambos pcs estão conectados via cabo se A tentar dar 'read' sem que B
+	tenha dado 'open' o 'read' fica lendo lixo eternamente. Essa situação não ocorre quando o 
+	cabo de B está desconectado, quando 'read' de A fica bloqueado. A Solução que propomos
+	- Refazer testes do checksum e verificar o bigendian
+
+LEMBRETES 2:
+	- Ajustar o checksum()
+	- Adicionar o timeout como parâmetro ou algo parecido a função configPort() e remove-la
+	de readPort.
+	- Criar uma estrutura glocal e static contendo as configurações.
+	- Tirar o timeout como um timeval. Usar um char.
+	- Para o RECEIVE_NOT_READY precisamos especificar na documentação qual o tempo de esper
+	 e o número de tentativas.
+	- Lembrar BEEEEM DEPOIS de tratar quando vierem números monstruosos de PDU. EX: 100 mil etc. Obs: tratar a fila
+	- Implementar algorimto de teste de velocidade. Primeiro vc envia um pacote a uma velocidade de 9000, se receber
+	  um RECEIVE_READY, então a velociadade é correspondente para os dois. Se não, abaixa a velocidade e tenta novamente
+	  até que consiga receber um RECEIVE_READY.
+TAREFAS 3:
+-----------------------> ATÉ NOITE DO DIA 22 - 16:46
+	1 - Parte escrita: Chaws -> Introdução, Descrição do problema, opinião, doxygen_mainpage
+						Rodrigo -> Revisar o que já foi feito, minha opinião, Conclusão
+	2 - Apresentação: Rodrigo - 1º Versão.
+-----------------------> ATÉ QUANDO FOR POSSÍVEL.
+	3 - LIMPAR OS PRINTS...
+	4 - VERBOSE
+	5 - TRASMITIR UM ARQUIVO DE 10MB
+	6 - CRIAR STRUCT GLOBAL CONTENDO AS CONFIGURAÇÕES
+	7 - CHECKSUM
+	8 - AJUSTES FINOS DA PARTE FINAL 
+
