@@ -11,43 +11,43 @@
 
 int main(int argc, char * argv[])
 {
-	int rc;
-	char v[] = "Olá a todos, este é o projeto rsgama cujo o "
-				"objetivo principal consiste na criação de um protocolo para rs232"
-				"Vale observar que este é um projeto desenvolvido para a disciplina"
-				"de rede da UnB-Gama";
-	
-	rc = configurePort(NULL);
-	if(rc < 0)
-	{
-		printError(rc);
-		return rc;
-	}
-	
-	puts("Dormi...");
-	sleep(2);
-	
-	puts("Enviei...");
-	rc = rsgSend(v, sizeof(v));
-	if(rc < 0)
-	{
-		printf("Erro: %d \n", rc);
-		printError(rc);
-		return rc;
-	}
+  int rc;
+  char v[] = "Hello everybody, the main objective of this project is "
+    "create a data link protocol onto rs232."
+    "It is important to highlight that this project was born in a network"
+    "class at UnB.";
 
-	/*	
-	sleep(1);
-	rc = rsgReceive(&msg, &size);
-	if(rc < 0)
-	{
-		printf("Erro: %d \n", rc);
-		printError(rc);
-		return rc;
-	}
-	printf("MENSAGEM RECEBIDA: %s \n", (char *)msg);
-	*/	
-	closePort();
+  rc = configurePort(NULL);
+  if(rc < 0)
+  {
+    printError(rc);
+    return rc;
+  }
+      
+  puts("Dormi...");
+  sleep(2);
+      
+  puts("Enviei...");
+  rc = rsgSend(v, sizeof(v));
+  if(rc < 0)
+  {
+    printf("Erro: %d \n", rc);
+    printError(rc);
+    return rc;
+  }
+
+  /*	
+  sleep(1);
+  rc = rsgReceive(&msg, &size);
+  if(rc < 0)
+  {
+    printf("Erro: %d \n", rc);
+    printError(rc);
+    return rc;
+  }
+  printf("MENSAGEM RECEBIDA: %s \n", (char *)msg);
+  */	
+  closePort();
 		
-	return 0;
+  return 0;
 }

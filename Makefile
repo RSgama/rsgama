@@ -11,30 +11,31 @@
 # Initialize the variables used
 
 #Folders
-PACKBIN		= 	bin
-PACKINC		=	inc
-PACKSRC		=	src	
-PACKOBJ		=	obj
+PACKBIN		= bin
+PACKINC		= inc
+PACKSRC		= src	
+PACKOBJ		= obj
 #Flags
-CC			= gcc
+CC		= gcc
 LPTHREAD	= -lpthread
 CUNIT		= -lcunit
-CFLAGS		= -Wall -I./$(PACKINC)
+WARN		= -Wall
+INC		= -I./$(PACKINC)
 #Create one list with all sources
 CSOURCES	= $(wildcard src/*c)
 
 # TRAGETS
-all: rsgama
+all: rsgama.bin
 
 # Main target, whose the objective is generate binary files. 
 # Dependencies are inserted by: $(CSOURCES:src/%.c=obj/%.o)
 #	*Basically capture all the elements of list and change the pieces
 #	 with "src/%.c" by "obj/%.o".
-rsgama: $(CSOURCES:src/%.c=obj/%.o)
-	$(CC) $(CFLAGS) $^ -o bin/$@ $(LPTHREAD)
+rsgama.bin: $(CSOURCES:src/%.c=obj/%.o)
+	$(CC) $(WARN) $^ -o bin/$@ $(LPTHREAD) $(INC)
 
 obj/%.o: src/%.c
-	$(CC) $(FLAGS) -c $< -o $@ $(CFLAGS) 
+	$(CC) $(FLAGS) -c $< -o $@ $(INC) 
 
 # Unitary Test
 suiteRS232: unitaryTest/CU_rs232.c obj/rs232.o

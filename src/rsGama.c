@@ -329,7 +329,7 @@ int rsgSend(const void * _messageToSend, int _sizeMessage)
 int rsgReceive(void ** _messageReceive, int * _sizeMessage)
 {
 	rsgPDU * rcvPDU = NULL, ackPDU, tmpPDU;
-	int  rc, checkAttempts = 0, i = 0, numPDU = 0;
+	int rc = 0, i = 0, numPDU = 0, checkAttempts = 0;
 	pduQueue rcvPDUQueue = {0, 0};
 	
 	ackPDU = fillDefaultRsgPDU(RECEIVE_READY);
