@@ -11,7 +11,7 @@ professor Fernando to create a data protocol as a homework  in his class
 link protocol, it was implemented many rules for handling many different 
 situations. As an overview, look at the state machine of the protocol below:
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/stateMachine.jpeg "State machine")
+![alt text](https://github.com/rodrigosiqueira/rsgama/blob/master/others/stateMachine.jpeg "State machine")
 
 For more information, take a look at wiki.
 
@@ -50,6 +50,6 @@ originally to create the protocol. Finally, "gama" is a little tribute for
  * Go to bin/ for see the binary file.
 * We recommend you use two cables with RS232 to USB interface. 
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/cable.jpg "State machine")
+![alt text](https://github.com/rodrigosiqueira/rsgama/blob/master/others/cable.jpg "Cable")
 
 
