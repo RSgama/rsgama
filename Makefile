@@ -25,7 +25,7 @@ INC		= -I./$(PACKINC)
 CSOURCES	= $(wildcard src/*c)
 
 # TRAGETS
-all: rsgama.bin
+all: prepare rsgama.bin
 
 # Main target, whose the objective is generate binary files. 
 # Dependencies are inserted by: $(CSOURCES:src/%.c=obj/%.o)
@@ -43,6 +43,9 @@ suiteRS232: unitaryTest/CU_rs232.c obj/rs232.o
 
 suiteRSGAMA: unitaryTest/CU_rsGama.c obj/rsGama.o
 	$(CC) $(CFLAGS) $^ -o bin/$@ $(CUNIT)
+
+prepare:
+	mkdir -p obj/ bin/
 
 # Clean all
 clean:
