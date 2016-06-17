@@ -12,7 +12,7 @@
 
 #Folders
 PACKBIN		= bin
-PACKINC		= inc
+PACKINC		= include
 PACKSRC		= src	
 PACKOBJ		= obj
 #Flags
